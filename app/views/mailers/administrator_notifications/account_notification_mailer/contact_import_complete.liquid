@@ -1,17 +1,17 @@
-<p>{{ 'mailer.common.hello' | t }}</p>
+<p>Hello,</p>
 
-<p>{{ 'mailer.administrator_notifications.account_notifications.contact_import_complete.body' | t }}</p>
+<p>Your contact import has been completed. Please check the contacts tab to view the imported contacts.</p>
 
-<p>{{ 'mailer.administrator_notifications.account_notifications.contact_import_complete.imported_records' | t: 'count', meta['imported_contacts'] }}</p>
+<p>Number of records imported: {{meta['imported_contacts']}}</p>
 
-<p>{{ 'mailer.administrator_notifications.account_notifications.contact_import_complete.failed_records' | t: 'count', meta['failed_contacts'] }}</p>
+<p>Number of records failed: {{meta['failed_contacts']}}</p>
 
 {% if meta['failed_contacts'] == 0 %}
   <p>
-    {{ 'mailer.administrator_notifications.account_notifications.contact_import_complete.click_to_view_imported' | t: 'url', action_url }}
+    Click <a href="{{action_url}}">here</a> to view the imported contacts.
   </p>
 {% else %}
   <p>
-    {{ 'mailer.administrator_notifications.account_notifications.contact_import_complete.click_to_view_failed' | t: 'url', action_url }}
+  Click <a href="{{ action_url }}" target="_blank">here</a> to view failed records.
   </p>
 {% endif %}

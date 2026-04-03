@@ -39,8 +39,7 @@ class AdministratorNotifications::AccountComplianceMailer < AdministratorNotific
   end
 
   def subject_for(account)
-    I18n.t('mailer.administrator_notifications.account_compliance.account_deleted.subject',
-           account_id: account.id, account_name: account.name)
+    "Account Deletion Notice for #{account.id} - #{account.name}"
   end
 
   def instance_admin_email

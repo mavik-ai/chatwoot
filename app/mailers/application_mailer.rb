@@ -18,10 +18,6 @@ class ApplicationMailer < ActionMailer::Base
 
   rescue_from(*ExceptionList::SMTP_EXCEPTIONS, with: :handle_smtp_exceptions)
 
-  def liquid_filters
-    [LiquidFilters::I18nFilter]
-  end
-
   def smtp_config_set_or_development?
     ENV.fetch('SMTP_ADDRESS', nil).present? || ENV.fetch('RESEND_API_KEY', nil).present? || Rails.env.development?
   end
