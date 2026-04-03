@@ -706,6 +706,10 @@ en:
         activate: "Please take a moment and click the link below and activate your account."
         confirm_account: "Confirm my account"
         login_account: "Login to my account"
+        invited_sso: "%{inviter_name}, with %{account_name}, has invited you to access %{brand_name} via Single Sign-On (SSO)."
+        sso_no_password: "Your organization uses SSO for secure authentication. You will not need a password to access your account."
+        sso_login: "You can now access your account by logging in through your organization's SSO portal."
+        sso_access: "You can access your account by logging in through your organization's SSO portal."
       reset_password_instructions:
         greeting: "Hello %{name}!"
         body: "Someone has requested a link to change your password. You can do this through the link below."
