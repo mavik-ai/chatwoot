@@ -101,7 +101,8 @@ describe Whatsapp::Providers::WhatsappBaileysService do
               webhookUrl: whatsapp_channel.inbox.callback_webhook_url,
               webhookVerifyToken: whatsapp_channel.provider_config['webhook_verify_token'],
               includeMedia: false,
-              groupsEnabled: described_class.groups_enabled?
+              groupsEnabled: described_class.groups_enabled?,
+              autoPresenceSubscribe: whatsapp_channel.provider_config['presence_subscribe'] || false
             }.to_json
           )
           .to_return(status: 200)
@@ -122,7 +123,8 @@ describe Whatsapp::Providers::WhatsappBaileysService do
               webhookUrl: whatsapp_channel.inbox.callback_webhook_url,
               webhookVerifyToken: whatsapp_channel.provider_config['webhook_verify_token'],
               includeMedia: false,
-              groupsEnabled: described_class.groups_enabled?
+              groupsEnabled: described_class.groups_enabled?,
+              autoPresenceSubscribe: whatsapp_channel.provider_config['presence_subscribe'] || false
             }.to_json
           )
           .to_return(
@@ -1378,7 +1380,8 @@ describe Whatsapp::Providers::WhatsappBaileysService do
               webhookUrl: whatsapp_channel.inbox.callback_webhook_url,
               webhookVerifyToken: whatsapp_channel.provider_config['webhook_verify_token'],
               includeMedia: false,
-              groupsEnabled: described_class.groups_enabled?
+              groupsEnabled: described_class.groups_enabled?,
+              autoPresenceSubscribe: whatsapp_channel.provider_config['presence_subscribe'] || false
             }.to_json
           )
           .to_return(status: 200)
@@ -1397,7 +1400,8 @@ describe Whatsapp::Providers::WhatsappBaileysService do
               webhookUrl: whatsapp_channel.inbox.callback_webhook_url,
               webhookVerifyToken: whatsapp_channel.provider_config['webhook_verify_token'],
               includeMedia: false,
-              groupsEnabled: described_class.groups_enabled?
+              groupsEnabled: described_class.groups_enabled?,
+              autoPresenceSubscribe: whatsapp_channel.provider_config['presence_subscribe'] || false
             }.to_json
           )
           .to_return(status: 200)
@@ -1416,7 +1420,8 @@ describe Whatsapp::Providers::WhatsappBaileysService do
               webhookUrl: whatsapp_channel.inbox.callback_webhook_url,
               webhookVerifyToken: whatsapp_channel.provider_config['webhook_verify_token'],
               includeMedia: false,
-              groupsEnabled: described_class.groups_enabled?
+              groupsEnabled: described_class.groups_enabled?,
+              autoPresenceSubscribe: whatsapp_channel.provider_config['presence_subscribe'] || false
             }.to_json
           )
           .to_return(status: 400, body: 'reconnection failed')
